@@ -10,7 +10,7 @@
                 "functions": [
                     {
                         "function": "minecraft:set_nbt",
-                        "tag": "{display:{Name:\"{\\\"text\\\":\\\"マナアイテム\\\",\\\"italic\\\":false,\\\"color\\\":\\\"aqua\\\"}\",Lore:[\"{\\\"text\\\":\\\"このアイテムがインベントリに残る場合\\\",\\\"italic\\\":false,\\\"color\\\":\\\"red\\\"}\",\"{\\\"text\\\":\\\"制作者に連絡してください\\\",\\\"color\\\":\\\"red\\\"}\"]},Enchantments:[{id:\"fortune\",lvl:10}]}"
+              "tag": "{display:{Name:\"{\\\"text\\\":\\\"マナアイテム\\\",\\\"italic\\\":false,\\\"color\\\":\\\"aqua\\\"}\",Lore:[\"{\\\"text\\\":\\\"このアイテムがインベントリに残る場合\\\",\\\"italic\\\":false,\\\"color\\\":\\\"red\\\"}\",\"{\\\"text\\\":\\\"制作者に連絡してください\\\",\\\"italic\\\":false,\\\"color\\\":\\\"red\\\"}\"]},Enchantments:[{id:\"fortune\",lvl:10}]}"
                     }
                 ],
                 "conditions": [
