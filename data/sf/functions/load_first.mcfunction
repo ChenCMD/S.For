@@ -2,15 +2,63 @@
     scoreboard objectives add Mana_CB dummy {"text":"マナ"}
     scoreboard objectives add C.Mana_CB dummy {"text":"結晶マナ"}
     scoreboard objectives add C.ManaMAX_CB dummy {"text":"結晶マナ所持上限"}
+    scoreboard objectives add W.CoolTime_CB dummy {"text":"プレイヤー武器クールタイム"}
+    scoreboard objectives add BowATK_CB dummy {"text":"弓攻撃力保存"}
+    scoreboard objectives add UserID_CB dummy {"text":"プレイヤー固有ID"}
+    scoreboard objectives add HealthMAX_CB dummy {"text":"プレイヤー最大体力"}
+    scoreboard objectives add Health_CB dummy {"text":"プレイヤー現在体力"}
+    scoreboard objectives add DEF_CB dummy {"text":"防御力"}
+    scoreboard objectives add DamageType_CB dummy {"text":"攻撃時ダメージ種類一時保存"}
+    scoreboard objectives add MobDEF_CB dummy {"text":"MOB防御力一時保存"}
+    scoreboard objectives add MobHealth_CB dummy {"text":"MOB体力一時保存"}
+    scoreboard objectives add MoBXP_CB dummy {"text":"MOB経験値一時保存"}
+    scoreboard objectives add A.CheckA0_CB dummy {"text":"装備を付けたことを検知"}
+    scoreboard objectives add A.CheckA1_CB dummy {"text":"装備を付けたことを検知"}
+    scoreboard objectives add A.CheckA2_CB dummy {"text":"装備を付けたことを検知"}
+    scoreboard objectives add A.CheckA3_CB dummy {"text":"装備を付けたことを検知"}
+    scoreboard objectives add A.CheckB0_CB dummy {"text":"装備を外したことを検知"}
+    scoreboard objectives add A.CheckB1_CB dummy {"text":"装備を外したことを検知"}
+    scoreboard objectives add A.CheckB2_CB dummy {"text":"装備を外したことを検知"}
+    scoreboard objectives add A.CheckB3_CB dummy {"text":"装備を外したことを検知"}
+#条件付きスコアボード
+    scoreboard objectives add FirstJoin_CB minecraft.custom:minecraft.play_one_minute {"text":"初回Join検知"}
+    scoreboard objectives add UseBow_CB minecraft.used:minecraft.bow {"text":"使用検知: 弓"}
+    scoreboard objectives add onDamage_CB minecraft.custom:minecraft.damage_resisted {"text":"被ダメージ検知"}
+    scoreboard objectives add onAttack_CB minecraft.custom:minecraft.damage_dealt {"text":"与ダメージ検知"}
+    scoreboard objectives add Sneak_CB minecraft.custom:minecraft.sneak_time {"text":"スニーク検知"}
 #乱数生成用
     scoreboard objectives add Random_CB dummy {"text":"疑似乱数生成用"}
     function sf:rng/modifier_gene
     scoreboard players set $Rand_X Random_CB 1
     scoreboard players set $Rand_A Random_CB 48271
     scoreboard players set $Rand_M Random_CB 2147483647
-#GlobalFlags周り
+
+#初期化
+    scoreboard players set $ReqXP GlobalVer_CB 500
+    scoreboard players set $XP GlobalVer_CB 0
+    scoreboard players set $Global UserID_CB 0
+    scoreboard players set $Difficulty GlobalVer_CB 0
+    scoreboard players set $Level GlobalVer_CB 1
+    scoreboard players set $Global HealthMAX_CB 100
+    scoreboard players set @a HealthMAX_CB 100
+    scoreboard players set @a Health 100
+
+#GlobalVer周り
+    #クリティカル発生率 (NaN%)  Default: 10
+        scoreboard players set $CriticalRate GlobalVer_CB 10
+    #クリティカル倍率 (ダメージ*NaN)  Default: 2
+        scoreboard players set $CriticalCorrection GlobalVer_CB 2
+    #Lvアップ時の必要経験値増加量 (前必要経験値*NaN/100)  Default: 110
+        scoreboard players set $ReqXPIncrease GlobalVer_CB 110
+    #Lvアップ時の最大体力増加量 (+NaN)  Default: 5
+        scoreboard players set $AddHealth GlobalVer_CB 5
+    #難易度IMP時の回復量にかかる係数 (補正元/1*2)  Default: 5,4
+        scoreboard players set $IMPCorrection1 GlobalVer_CB 5
+        scoreboard players set $IMPCorrection2 GlobalVer_CB 4
+
     #進行度保存変数
         scoreboard players set GlobalProgress GlobalVer_CB 0
+
     #operation用変数
         scoreboard players set $1 GlobalVer_CB 1
         scoreboard players set $2 GlobalVer_CB 2
@@ -76,3 +124,30 @@
         scoreboard players set $900 GlobalVer_CB 900
         scoreboard players set $950 GlobalVer_CB 950
         scoreboard players set $1000 GlobalVer_CB 1000
+        scoreboard players set $2000 GlobalVer_CB 2000
+        scoreboard players set $3000 GlobalVer_CB 3000
+        scoreboard players set $4000 GlobalVer_CB 4000
+        scoreboard players set $5000 GlobalVer_CB 5000
+        scoreboard players set $6000 GlobalVer_CB 6000
+        scoreboard players set $7000 GlobalVer_CB 7000
+        scoreboard players set $8000 GlobalVer_CB 8000
+        scoreboard players set $9000 GlobalVer_CB 9000
+        scoreboard players set $10000 GlobalVer_CB 10000
+        scoreboard players set $20000 GlobalVer_CB 20000
+        scoreboard players set $30000 GlobalVer_CB 30000
+        scoreboard players set $40000 GlobalVer_CB 40000
+        scoreboard players set $50000 GlobalVer_CB 50000
+        scoreboard players set $60000 GlobalVer_CB 60000
+        scoreboard players set $70000 GlobalVer_CB 70000
+        scoreboard players set $80000 GlobalVer_CB 80000
+        scoreboard players set $90000 GlobalVer_CB 90000
+        scoreboard players set $100000 GlobalVer_CB 100000
+        scoreboard players set $200000 GlobalVer_CB 200000
+        scoreboard players set $300000 GlobalVer_CB 300000
+        scoreboard players set $400000 GlobalVer_CB 400000
+        scoreboard players set $500000 GlobalVer_CB 500000
+        scoreboard players set $600000 GlobalVer_CB 600000
+        scoreboard players set $700000 GlobalVer_CB 700000
+        scoreboard players set $800000 GlobalVer_CB 800000
+        scoreboard players set $900000 GlobalVer_CB 900000
+        scoreboard players set $1000000 GlobalVer_CB 1000000

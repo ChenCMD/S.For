@@ -6,6 +6,8 @@
         "minecraft:creeper",
         "minecraft:blaze",
         "minecraft:wither_skeleton",
-        "minecraft:spider"
+        "minecraft:spider",
+        "minecraft:ender_dragon",
+        "minecraft:wither"
     ]
 }

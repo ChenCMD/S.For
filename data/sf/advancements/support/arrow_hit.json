@@ -1,0 +1,29 @@
+{
+    "display": {
+        "title": "ArrowHit",
+        "description": "",
+        "icon": {
+            "item": "minecraft:arrow"
+        },
+        "background": "minecraft:textures/block/quartz_block_top.png",
+        "frame": "task",
+        "show_toast": false,
+        "announce_to_chat": false,
+        "hidden": false
+    },
+    "criteria": {
+        "arrow": {
+            "trigger": "minecraft:player_hurt_entity",
+            "conditions": {
+                "damage": {
+                    "type": {
+                        "is_projectile": true,
+                        "direct_entity": {
+                            "type": "arrow"
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

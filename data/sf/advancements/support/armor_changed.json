@@ -1,0 +1,28 @@
+{
+    "display": {
+        "title": "InventoryChanged",
+        "description": "",
+        "icon": {
+            "item": "minecraft:iron_chestplate"
+        },
+        "background": "minecraft:textures/block/quartz_block_top.png",
+        "frame": "task",
+        "show_toast": false,
+        "announce_to_chat": false,
+        "hidden": false
+    },
+    "criteria": {
+        "items": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": {
+                }
+            }
+        }
+    },
+    "rewards": {
+        "function": [
+            "sf:items/armor_check"
+        ]
+    }
+}
