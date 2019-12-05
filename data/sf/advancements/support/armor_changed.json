@@ -15,14 +15,12 @@
         "items": {
             "trigger": "minecraft:inventory_changed",
             "conditions": {
-                "items": {
-                }
+                "items": [
+                    {
+                        "nbt": "{isArmor:1b}"
+                    }
+                ]
             }
         }
-    },
-    "rewards": {
-        "function": [
-            "sf:items/armor_check"
-        ]
     }
 }

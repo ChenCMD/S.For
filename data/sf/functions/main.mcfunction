@@ -10,15 +10,15 @@
     #演出用偽ダメージ
         execute as @e[tag=DummyDamage] run function sf:combat/final_process/dummy_damage
     #プレイヤーのトリガー関連
-        execute as @a[scores={FirstJoin_CB=1}] run function sf:trigger/first_join
+        execute as @a[scores={FirstJoin_CB=1}] at @s run function sf:trigger/first_join
         execute as @a[scores={onDamage_CB=0..}] at @s run function sf:trigger/ondamage
         execute as @a[scores={onAttack_CB=0..}] at @s run function sf:trigger/onattack
         execute as @a[scores={UseBow_CB=1..}] at @s run function sf:trigger/bow/shot
         execute as @a[advancements={sf:support/arrow_hit=true}] at @s run function sf:trigger/bow/hit
-
     #矢返還処理
-        execute if entity @e[nbt={inGround:1b},type=arrow] as @a run function sf:items/arrow_give
-
+        execute if entity @e[nbt={inGround:1b},type=arrow] as @a at @s run function sf:items/arrow_give
+    #装備
+        execute as @a[advancements={sf:support/armor_changed=true}] at @s run function sf:items/armor_check
 
 #クラフター周りの処理
     #クラフター作成
