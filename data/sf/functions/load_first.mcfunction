@@ -1,3 +1,7 @@
+#DHP用定義
+    #define entity $ Variables
+    #define entity $Global Temporary data is this
+
 #通常使用スコアボード
     scoreboard objectives add Mana_CB dummy {"text":"マナ"}
     scoreboard objectives add C.Mana_CB dummy {"text":"結晶マナ"}
@@ -20,6 +24,28 @@
     scoreboard objectives add A.CheckB1_CB dummy {"text":"装備を外したことを検知"}
     scoreboard objectives add A.CheckB2_CB dummy {"text":"装備を外したことを検知"}
     scoreboard objectives add A.CheckB3_CB dummy {"text":"装備を外したことを検知"}
+#クラフト関連の
+    scoreboard objectives add Craft.D.103 minecraft.crafted:minecraft.diamond_helmet {"text":"クラフト: diamond_helmet"}
+    scoreboard objectives add Craft.D.102 minecraft.crafted:minecraft.diamond_chestplate {"text":"クラフト: diamond_chestplate"}
+    scoreboard objectives add Craft.D.101 minecraft.crafted:minecraft.diamond_leggings {"text":"クラフト: diamond_leggings"}
+    scoreboard objectives add Craft.D.100 minecraft.crafted:minecraft.diamond_boots {"text":"クラフト: diamond_boots"}
+    scoreboard objectives add Craft.G.103 minecraft.crafted:minecraft.golden_helmet {"text":"クラフト: golden_helmet"}
+    scoreboard objectives add Craft.G.102 minecraft.crafted:minecraft.golden_chestplate {"text":"クラフト: golden_chestplate"}
+    scoreboard objectives add Craft.G.101 minecraft.crafted:minecraft.golden_leggings {"text":"クラフト: golden_leggings"}
+    scoreboard objectives add Craft.G.100 minecraft.crafted:minecraft.golden_boots {"text":"クラフト: golden_boots"}
+    scoreboard objectives add Craft.I.103 minecraft.crafted:minecraft.iron_helmet {"text":"クラフト: iron_helmet"}
+    scoreboard objectives add Craft.I.102 minecraft.crafted:minecraft.iron_chestplate {"text":"クラフト: iron_chestplate"}
+    scoreboard objectives add Craft.I.101 minecraft.crafted:minecraft.iron_leggings {"text":"クラフト: iron_leggings"}
+    scoreboard objectives add Craft.I.100 minecraft.crafted:minecraft.iron_boots {"text":"クラフト: iron_boots"}
+    scoreboard objectives add Craft.C.103 minecraft.crafted:minecraft.chainmail_helmet {"text":"クラフト: chainmail_helmet"}
+    scoreboard objectives add Craft.C.102 minecraft.crafted:minecraft.chainmail_chestplate {"text":"クラフト: chainmail_chestplate"}
+    scoreboard objectives add Craft.C.101 minecraft.crafted:minecraft.chainmail_leggings {"text":"クラフト: chainmail_leggings"}
+    scoreboard objectives add Craft.C.100 minecraft.crafted:minecraft.chainmail_boots {"text":"クラフト: chainmail_boots"}
+    scoreboard objectives add Craft.L.103 minecraft.crafted:minecraft.leather_helmet {"text":"クラフト: leather_helmet"}
+    scoreboard objectives add Craft.L.102 minecraft.crafted:minecraft.leather_chestplate {"text":"クラフト: leather_chestplate"}
+    scoreboard objectives add Craft.L.101 minecraft.crafted:minecraft.leather_leggings {"text":"クラフト: leather_leggings"}
+    scoreboard objectives add Craft.L.100 minecraft.crafted:minecraft.leather_boots {"text":"クラフト: leather_boots"}
+
 #条件付きスコアボード
     scoreboard objectives add FirstJoin_CB minecraft.custom:minecraft.play_one_minute {"text":"初回Join検知"}
     scoreboard objectives add UseBow_CB minecraft.used:minecraft.bow {"text":"使用検知: 弓"}
@@ -57,7 +83,7 @@
         scoreboard players set $IMPCorrection2 GlobalVer_CB 4
 
     #進行度保存変数
-        scoreboard players set GlobalProgress GlobalVer_CB 0
+        scoreboard players set $GlobalProgress GlobalVer_CB 0
 
     #operation用変数
         scoreboard players set $1 GlobalVer_CB 1

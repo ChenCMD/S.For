@@ -20,6 +20,10 @@
     #装備
         execute as @a[advancements={sf:support/armor_changed=true}] at @s run function sf:items/armor_check
 
+
+#既存クラフトの上書き
+
+
 #クラフター周りの処理
     #クラフター作成
         execute as @a at @s if entity @e[type=item,distance=..6] as @e[type=item,nbt={Item:{id:"minecraft:crafting_table",Count:1b}},distance=..6] at @s if block ~ ~-0.15 ~ minecraft:enchanting_table unless entity @e[distance=..6,tag=Crafter] run tag @s add CrafterCreate
@@ -27,14 +31,14 @@
     #クラフター破壊
         execute as @e[tag=Crafter,type=armor_stand] at @s unless block ~ ~ ~ minecraft:enchanting_table run function sf:crafting_table/break
     #クラフターパーティクル
-        execute as @e[tag=Crafter,type=armor_stand] at @s if entity @p[distance=..12] run particle minecraft:end_rod ~ ~0.5 ~ 0.35 0.35 0.35 0 1 normal
+        execute as @e[tag=Crafter,type=armor_stand] at @s if entity @p[distance=..12] run particle end_rod ~ ~0.5 ~ 0.35 0.35 0.35 0 1 normal
     #装飾ガラス回転
         execute as @e[tag=Ornament,type=armor_stand] at @s if entity @p[distance=..12] run function sf:crafting_table/ornament/spin
 
 
 #強化MOB周りの処理
     #抽選
-        execute as @a[tag=!Death] at @s as @e[type=#sf:enemy,distance=..35,tag=!AlreadyDraw] run function sf:mob/draw
+        execute as @a[tag=!Death] at @s as @e[type=#sf:enemy,distance=..35,tag=!AlreadySet] run function sf:mob/set
 
 #tickの最後にする処理
     #Sneak Bool型にするやつ

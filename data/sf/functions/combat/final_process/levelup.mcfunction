@@ -7,7 +7,7 @@ scoreboard players operation $ReqXP GlobalVer_CB *= $ReqXPIncrease GlobalVer_CB
 scoreboard players operation $ReqXP GlobalVer_CB /= $100 GlobalVer_CB
 #レベル+1
 scoreboard players add $Level GlobalVer_CB 1
-#体力+5
+#体力+N
 scoreboard players operation $Global GlobalVer_CB += $AddHealth GlobalVer_CB
 scoreboard players operation @a[tag=!Death] HealthMAX_CB_CB += $AddHealth GlobalVer_CB
 scoreboard players operation @a[tag=!Death] Health_CB += $AddHealth GlobalVer_CB
