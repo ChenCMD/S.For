@@ -8,4 +8,4 @@ execute if entity @s[nbt={PortalCooldown:1}] align xyz run summon minecraft:armo
 execute if entity @s[nbt={PortalCooldown:1}] align xyz positioned ~0.5 ~ ~0.5 run function sf:crafting_table/ornament/summon
 execute if entity @s[nbt={PortalCooldown:1}] run kill @s
 #ゲーム進行度設定
-execute if entity @s[nbt={PortalCooldown:1}] if score $GlobalProgress GlobalVer_CB matches 0 run scoreboard players set $GlobalProgress GlobalVer_CB 1
+    execute if entity @s[nbt={PortalCooldown:1}] if score $GlobalProgress GlobalVer_CB matches 0 run scoreboard players set $GlobalProgress GlobalVer_CB 1

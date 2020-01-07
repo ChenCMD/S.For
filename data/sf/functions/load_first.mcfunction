@@ -1,4 +1,4 @@
-#DHP用定義
+#VSCodeExtension: Datapack Helper Plus Define
     #define entity $ Variables
     #define entity $Global Temporary data is this
 
