@@ -18,6 +18,7 @@
     scoreboard objectives add C.Mana_CB dummy {"text":"結晶マナ"}
     scoreboard objectives add C.ManaMAX_CB dummy {"text":"結晶マナ所持上限"}
     scoreboard objectives add W.CoolTime_CB dummy {"text":"プレイヤー武器クールタイム"}
+    scoreboard objectives add ATK_CB dummy {"text":"プレイヤー攻撃力"}
     scoreboard objectives add BowATK_CB dummy {"text":"弓攻撃力保存"}
     scoreboard objectives add UserID_CB dummy {"text":"プレイヤー固有ID"}
     scoreboard objectives add HealthMAX_CB dummy {"text":"プレイヤー最大体力"}
@@ -82,7 +83,7 @@
     scoreboard players set $Level GlobalVer_CB 1
     scoreboard players set $Global HealthMAX_CB 100
     scoreboard players set @a HealthMAX_CB 100
-    scoreboard players set @a Health 100
+    scoreboard players set @a Health_CB 100
 
 #GlobalVer周り
     #クリティカル発生率 (NaN%)  Default: 10

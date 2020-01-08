@@ -1,0 +1,39 @@
+{
+    "type": "minecraft:empty",
+    "pools": [
+        {
+            "rolls": 1,
+            "entries": [
+                {
+                    "type": "minecraft:item",
+                    "name": "minecraft:debug_stick",
+                    "functions": [
+                        {
+                            "function": "minecraft:set_name",
+                            "name": [
+                                {
+                                    "text": "◆",
+                                    "color": "yellow",
+                                    "italic": false
+                                },
+                                {
+                                    "score": {
+                                        "objective":"ATK_CB",
+                                        "name":"$RegisterDamage"
+                                    },
+                                    "color": "yellow",
+                                    "italic": false
+                                }
+                            ],
+                            "entity": "this"
+                        },
+                        {
+                            "function": "minecraft:set_nbt",
+                            "tag": "{ScoreResolveBase:1b}"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

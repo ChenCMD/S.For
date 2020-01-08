@@ -19,8 +19,11 @@
         execute as @a[scores={Death_CB=1..}] at @s run function sf:trigger/death
         execute as @e[nbt={inGround:1b},type=arrow] at @s run function sf:trigger/bow/inground
     #装備
-        execute as @a[advancements={sf:support/armor_changed=true}] at @s run function sf:items/armor_check
-
+        execute as @a[advancements={sf:support/armor_changed=true}] run function sf:items/armor_check
+    #ダメージ表記
+        execute if entity @e[tag=DamageLogs] run function sf:combat/common/damage_mes_tick
+    #クールタイム
+        execute as @a unless score @s W.CoolTime_CB matches -1 run function sf:combat/common/cooltime_decrement
 
 #既存クラフトの上書き
 

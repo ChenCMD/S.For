@@ -1,5 +1,7 @@
-execute if score @s ATK_CB matches 10000..99999 run summon minecraft:armor_stand ^-0.08 ^1.9 ^0.1 {PortalCooldown:16,Tags:["DamageLogs","NativeLoad"],NoGravity:1b,Small:0b,Marker:1b,Invisible:1b,Invulnerable:1b,CustomName:"{\"text\":\"◆\",\"color\":\"yellow\",\"bold\":false}",CustomNameVisible:1b}
-execute if score @s ATK_CB matches 1000..9999 run summon minecraft:armor_stand ^-0.2 ^1.9 ^0.1 {PortalCooldown:16,Tags:["DamageLogs","NativeLoad"],NoGravity:1b,Small:0b,Marker:1b,Invisible:1b,Invulnerable:1b,CustomName:"{\"text\":\"◆\",\"color\":\"yellow\",\"bold\":false}",CustomNameVisible:1b}
-execute if score @s ATK_CB matches 100..999 run summon minecraft:armor_stand ^-0.32 ^1.9 ^0.1 {PortalCooldown:16,Tags:["DamageLogs","NativeLoad"],NoGravity:1b,Small:0b,Marker:1b,Invisible:1b,Invulnerable:1b,CustomName:"{\"text\":\"◆\",\"color\":\"yellow\",\"bold\":false}",CustomNameVisible:1b}
-execute if score @s ATK_CB matches 10..99 run summon minecraft:armor_stand ^-0.44 ^1.9 ^0.1 {PortalCooldown:16,Tags:["DamageLogs","NativeLoad"],NoGravity:1b,Small:0b,Marker:1b,Invisible:1b,Invulnerable:1b,CustomName:"{\"text\":\"◆\",\"color\":\"yellow\",\"bold\":false}",CustomNameVisible:1b}
-execute if score @s ATK_CB matches 1..9 run summon minecraft:armor_stand ^-0.56 ^1.9 ^0.1 {PortalCooldown:16,Tags:["DamageLogs","NativeLoad"],NoGravity:1b,Small:0b,Marker:1b,Invisible:1b,Invulnerable:1b,CustomName:"{\"text\":\"◆\",\"color\":\"yellow\",\"bold\":false}",CustomNameVisible:1b}
+scoreboard players operation $RegisterDamage ATK_CB = @s ATK_CB
+loot spawn ~ ~200 ~ loot sf:message/damage/critical
+scoreboard players reset $RegisterDamage
+summon armor_stand ~ ~ ~ {PortalCooldown:16,Tags:["DamageLogs","NativeLoad","NotInsert"],NoGravity:1b,Small:0b,Marker:1b,Invisible:1b,Invulnerable:1b,CustomName:"",CustomNameVisible:1b}
+execute as @e[distance=..0.0001,limit=1,tag=DamageLogs,tag=NotInsert] positioned ~ ~200 ~ run data modify entity @s CustomName set from entity @e[type=item,nbt={Item:{tag:{ScoreResolveBase:1b}}},distance=..1,limit=1] Item.tag.display.Name
+tag @e[distance=..0.0001,limit=1,tag=DamageLogs,tag=NotInsert] remove NotInsert
+execute positioned ~ ~200 ~ run kill @e[type=item,nbt={Item:{tag:{ScoreResolveBase:1b}}},distance=..1,limit=1]

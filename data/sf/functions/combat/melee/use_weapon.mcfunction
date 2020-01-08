@@ -10,5 +10,3 @@ execute store result score @s W.CoolTime_CB run data get entity @s SelectedItem.
 scoreboard players set @s DamageType_CB 1
 #ダメージ処理functionへ
 function sf:combat/final_process/player_to_mob
-#ダメージを与えたことを無かったことに
-scoreboard players reset @s onAttack_CB
