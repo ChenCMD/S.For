@@ -2,6 +2,17 @@
     #define entity $ Variables
     #define entity $Global Temporary data is this
 
+#gamerule
+    gamerule showDeathMessages false
+#チーム
+    team add HP-High {"text":"HP 11/20-20/20"}
+    team add HP-Medium {"text":"HP 6/20-10/20"}
+    team add HP-Low {"text":"HP 0/20-5/20"}
+    team add Died {"text":"Died"}
+    team modify HP-High color green
+    team modify HP-Medium color yellow
+    team modify HP-Low color red
+    team modify Died color dark_gray
 #通常使用スコアボード
     scoreboard objectives add Mana_CB dummy {"text":"マナ"}
     scoreboard objectives add C.Mana_CB dummy {"text":"結晶マナ"}
@@ -11,6 +22,8 @@
     scoreboard objectives add UserID_CB dummy {"text":"プレイヤー固有ID"}
     scoreboard objectives add HealthMAX_CB dummy {"text":"プレイヤー最大体力"}
     scoreboard objectives add Health_CB dummy {"text":"プレイヤー現在体力"}
+    scoreboard objectives add PerHealth_CB dummy {"text":"プレイヤー体力割合値 上限20"}
+    scoreboard objectives modify PerHealth_CB rendertype hearts
     scoreboard objectives add DEF_CB dummy {"text":"防御力"}
     scoreboard objectives add DamageType_CB dummy {"text":"攻撃時ダメージ種類一時保存"}
     scoreboard objectives add MobDEF_CB dummy {"text":"MOB防御力一時保存"}
@@ -47,6 +60,8 @@
     scoreboard objectives add Craft.L.100 minecraft.crafted:minecraft.leather_boots {"text":"クラフト: leather_boots"}
 
 #条件付きスコアボード
+    scoreboard objectives add Respawn_CB minecraft.custom:minecraft.time_since_death {"text":"リスポーン検知"}
+    scoreboard objectives add Death_CB minecraft.custom:minecraft.deaths {"text":"死亡検知"}
     scoreboard objectives add FirstJoin_CB minecraft.custom:minecraft.play_one_minute {"text":"初回Join検知"}
     scoreboard objectives add UseBow_CB minecraft.used:minecraft.bow {"text":"使用検知: 弓"}
     scoreboard objectives add onDamage_CB minecraft.custom:minecraft.damage_resisted {"text":"被ダメージ検知"}

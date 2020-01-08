@@ -14,7 +14,9 @@
     scoreboard players operation @s Health_CB -= @s onDamage_CB
 #被ダメージのログ
     tellraw @s ["",{"text":"* "},{"score":{"name":"@s","objective":"onDamage_CB"},"color":"red"},{"translate":"ダメージを受けた","color":"red"}]
+#HP -の時に0に
+    scoreboard players set @s[scores={Health_CB=..-1}] Health_CB 0
 #HPが0の場合死亡処理を突っ込む
-    execute if entity @s[scores={Health_CB=..0}] run function sf:combat/final_process/died
-#処理リセット
-    scoreboard players reset @s onDamage_CB
+    execute if entity @s[scores={Health_CB=0}] run function sf:combat/final_process/died
+#PerHealth更新処理
+    function sf:combat/common/health_per
