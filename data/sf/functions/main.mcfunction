@@ -17,8 +17,7 @@
         execute as @a[scores={UseBow_CB=1..}] at @s run function sf:trigger/bow/shot
         execute as @a[advancements={sf:support/arrow_hit=true}] at @s run function sf:trigger/bow/hit
         execute as @a[scores={Death_CB=1..}] at @s run function sf:trigger/death
-    #矢返還処理
-        execute if entity @e[nbt={inGround:1b},type=arrow] as @a at @s run function sf:items/arrow_give
+        execute as @e[nbt={inGround:1b},type=arrow] at @s run function sf:trigger/bow/inground
     #装備
         execute as @a[advancements={sf:support/armor_changed=true}] at @s run function sf:items/armor_check
 
