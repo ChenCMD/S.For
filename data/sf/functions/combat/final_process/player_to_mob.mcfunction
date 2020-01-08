@@ -27,8 +27,10 @@
     scoreboard players set @e[tag=Target,scores={MobHealth_CB=..0}] MobHealth_CB 0
 #ダメージログ
     #execute as @e[tag=Target] run tellraw @a[tag=Attacker] ["",{"text":"* "},{"score":{"name":"@s","objective":"ATK_CB"},"color":"red"},{"translate":"player.damage.log","color":"green"},{"text":" <"},{"score":{"name":"@s","objective":"MobHealth_CB"},"color":"aqua"},{"text":">"}]
-    execute if entity @s[tag=!NoCT,tag=!NoBowCT] unless entity @s[scores={DamageType_CB=1},nbt=!{SelectedItem:{}}] if score @s Random_CB < $CriticalRate GlobalVer_CB as @e[tag=Target] at @s rotated as @a[tag=Attacker] rotated ~ 0 positioned ^-0.5 ^1.9 ^0.1 run function sf:combat/final_process/damage_mes_crit
-    execute as @e[tag=Target] at @s rotated as @a[tag=Attacker] rotated ~ 0 positioned ^-0.5 ^1.9 ^0.1 run function sf:combat/final_process/damage_mes
+    execute if entity @s[tag=!NoCT,tag=!NoBowCT] unless entity @s[scores={DamageType_CB=1},nbt=!{SelectedItem:{}}] if score @s Random_CB < $CriticalRate GlobalVer_CB run tag @s add crit
+    execute if entity @s[tag=!crit] as @e[tag=Target] at @s rotated as @a[tag=Attacker] rotated ~ 0 positioned ^-0.5 ^1.9 ^0.1 run function sf:combat/final_process/damage_mes
+    execute if entity @s[tag=crit] as @e[tag=Target] at @s rotated as @a[tag=Attacker] rotated ~ 0 positioned ^-0.5 ^1.9 ^0.1 run function sf:combat/final_process/damage_mes_crit
+    tag @s remove crit
 #MobATK_CBリセット
     scoreboard players reset @e[tag=Target] ATK_CB
 #体力が0のMobをKill
