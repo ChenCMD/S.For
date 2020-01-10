@@ -79,7 +79,7 @@
     scoreboard objectives add Sneak_CB minecraft.custom:minecraft.sneak_time {"text":"スニーク検知"}
 #乱数生成用
     scoreboard objectives add Random_CB dummy {"text":"疑似乱数生成用"}
-    function sf:rng/modifier_gene
+    function sf:system/rng/modifier_gene
     scoreboard players set $Rand_X Random_CB 1
     scoreboard players set $Rand_A Random_CB 48271
     scoreboard players set $Rand_M Random_CB 2147483647
