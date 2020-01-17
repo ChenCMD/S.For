@@ -3,7 +3,7 @@
     tag @e[tag=HurtEntity,sort=nearest] add Target
     tag @s add Attacker
 #レベルによるATK_CBボーナス
-    execute if entity @s[tag=!NoCT,tag=!NoBowCT] unless entity @s[scores={DamageType_CB=1},nbt=!{SelectedItem:{}}] run scoreboard players operation $RegisterATK GlobalVer_CB = $Level GlobalVer_CB
+    execute if entity @s[tag=!NoCT,tag=!NoBowCT] unless entity @s[scores={DamageType_CB=1},nbt=!{SelectedItem:{}}] run scoreboard players operation $RegisterATK GlobalVer_CB = Level GlobalVer_CB
     execute if entity @s[tag=!NoCT,tag=!NoBowCT] unless entity @s[scores={DamageType_CB=1},nbt=!{SelectedItem:{}}] run scoreboard players operation $RegisterATK GlobalVer_CB /= $2 GlobalVer_CB
     execute if entity @s[tag=!NoCT,tag=!NoBowCT] unless entity @s[scores={DamageType_CB=1},nbt=!{SelectedItem:{}}] run scoreboard players operation @s ATK_CB += $RegisterATK GlobalVer_CB
 #MobにATK_CBを移行
@@ -14,9 +14,10 @@
 #アルテリオス計算 防御貫通武器を持っている場合スキップ
     execute unless entity @s[scores={DamageType_CB=1},nbt={SelectedItem:{tag:{DEFPiercing:1b}}}] unless entity @s[scores={DamageType_CB=2},tag=DEFPiercing] as @e[tag=Target] run scoreboard players operation @s ATK_CB -= @s MobDEF_CB
 #クリティカル処理
-    execute if entity @s[tag=!NoCT,tag=!NoBowCT] unless entity @s[scores={DamageType_CB=1},nbt=!{SelectedItem:{}}] run function sf:system/rng/generation
+    execute if entity @s[tag=!NoCT,tag=!NoBowCT] unless entity @s[scores={DamageType_CB=1},nbt=!{SelectedItem:{}}] run function sf:rng/generation
     execute if entity @s[tag=!NoCT,tag=!NoBowCT] unless entity @s[scores={DamageType_CB=1},nbt=!{SelectedItem:{}}] run scoreboard players operation @s Random_CB %= $100 GlobalVer_CB
-    execute if entity @s[tag=!NoCT,tag=!NoBowCT] unless entity @s[scores={DamageType_CB=1},nbt=!{SelectedItem:{}}] if score @s Random_CB < $CriticalRate GlobalVer_CB as @e[tag=Target] run function sf:combat/final_process/crit_calc
+    execute if entity @s[tag=!NoCT,tag=!NoBowCT] unless entity @s[scores={DamageType_CB=1},nbt=!{SelectedItem:{}}] if score @s Random_CB < $CriticalRate GlobalVer_CB run scoreboard players operation @e[tag=Target] ATK_CB *= $CriticalCorrection GlobalVer_CB
+    execute if entity @s[tag=!NoCT,tag=!NoBowCT] unless entity @s[scores={DamageType_CB=1},nbt=!{SelectedItem:{}}] if score @s Random_CB < $CriticalRate GlobalVer_CB run scoreboard players operation @e[tag=Target] ATK_CB -= Level GlobalVer_CB
     execute if entity @s[tag=!NoCT,tag=!NoBowCT] unless entity @s[scores={DamageType_CB=1},nbt=!{SelectedItem:{}}] if score @s Random_CB < $CriticalRate GlobalVer_CB at @a[tag=Attacker] run playsound minecraft:entity.player.levelup block @a ~ ~ ~ 1 1.8
 #ダメージが0以下の場合 1にセット
     scoreboard players set @e[tag=Target,scores={ATK_CB=..0}] ATK_CB 1
