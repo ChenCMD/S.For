@@ -112,13 +112,45 @@
         scoreboard players set $8 GlobalVer_CB 8
         scoreboard players set $9 GlobalVer_CB 9
         scoreboard players set $10 GlobalVer_CB 10
+    scoreboard players set $11 GlobalVer_CB 11
+    scoreboard players set $12 GlobalVer_CB 12
+    scoreboard players set $13 GlobalVer_CB 13
+    scoreboard players set $14 GlobalVer_CB 14
         scoreboard players set $15 GlobalVer_CB 15
+    scoreboard players set $16 GlobalVer_CB 16
+    scoreboard players set $17 GlobalVer_CB 17
+    scoreboard players set $18 GlobalVer_CB 18
+    scoreboard players set $19 GlobalVer_CB 19
         scoreboard players set $20 GlobalVer_CB 20
+    scoreboard players set $21 GlobalVer_CB 21
+    scoreboard players set $22 GlobalVer_CB 22
+    scoreboard players set $23 GlobalVer_CB 23
+    scoreboard players set $24 GlobalVer_CB 24
         scoreboard players set $25 GlobalVer_CB 25
+    scoreboard players set $26 GlobalVer_CB 26
+    scoreboard players set $27 GlobalVer_CB 27
+    scoreboard players set $28 GlobalVer_CB 28
+    scoreboard players set $29 GlobalVer_CB 29
         scoreboard players set $30 GlobalVer_CB 30
+    scoreboard players set $31 GlobalVer_CB 31
+    scoreboard players set $32 GlobalVer_CB 32
+    scoreboard players set $33 GlobalVer_CB 33
+    scoreboard players set $34 GlobalVer_CB 34
         scoreboard players set $35 GlobalVer_CB 35
+    scoreboard players set $36 GlobalVer_CB 36
+    scoreboard players set $37 GlobalVer_CB 37
+    scoreboard players set $38 GlobalVer_CB 38
+    scoreboard players set $39 GlobalVer_CB 39
         scoreboard players set $40 GlobalVer_CB 40
+    scoreboard players set $41 GlobalVer_CB 41
+    scoreboard players set $42 GlobalVer_CB 42
+    scoreboard players set $43 GlobalVer_CB 43
+    scoreboard players set $44 GlobalVer_CB 44
         scoreboard players set $45 GlobalVer_CB 45
+    scoreboard players set $46 GlobalVer_CB 46
+    scoreboard players set $47 GlobalVer_CB 37
+    scoreboard players set $48 GlobalVer_CB 38
+    scoreboard players set $49 GlobalVer_CB 39
         scoreboard players set $50 GlobalVer_CB 50
         scoreboard players set $55 GlobalVer_CB 55
         scoreboard players set $60 GlobalVer_CB 60
