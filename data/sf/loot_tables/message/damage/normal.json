@@ -19,8 +19,7 @@
                                     "color":"gold",
                                     "italic": false
                                 }
-                            ],
-                            "entity": "this"
+                            ]
                         },
                         {
                             "function": "minecraft:set_nbt",

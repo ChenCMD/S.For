@@ -24,8 +24,7 @@
                                     "color": "yellow",
                                     "italic": false
                                 }
-                            ],
-                            "entity": "this"
+                            ]
                         },
                         {
                             "function": "minecraft:set_nbt",
