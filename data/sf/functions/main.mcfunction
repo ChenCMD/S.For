@@ -42,7 +42,7 @@
 
 #強化MOB周りの処理
     #抽選
-        execute as @a[tag=!Death] at @s as @e[distance=..35,tag=!AlreadySet] run function sf:mob/set
+        execute as @a[tag=!Death] at @s as @e[type=!player,distance=..35,tag=!AlreadySet] run function sf:mob/set
 
 #tickの最後にする処理
     #Sneak Bool型にするやつ
