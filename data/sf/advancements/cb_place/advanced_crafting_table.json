@@ -1,0 +1,28 @@
+{
+    "display": {
+        "title": "CustomBlock: AdvancedCraftingTable",
+        "description": "",
+        "icon": {
+            "item": "minecraft:crafting_table"
+        },
+        "background": "minecraft:textures/block/quartz_block_top.png",
+        "frame": "task",
+        "show_toast": false,
+        "announce_to_chat": false,
+        "hidden": true
+    },
+    "criteria": {
+        "trigger": {
+            "trigger": "minecraft:placed_block",
+            "conditions": {
+                "item": {
+                    "item": "minecraft:crafting_table",
+                    "nbt": "{id:\"sf:advanced_crafting_table\"}"
+                }
+            }
+        }
+    },
+    "rewards": {
+        "function": "sf:qtable/set_tag"
+    }
+}

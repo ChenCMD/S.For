@@ -1,0 +1,9 @@
+execute as @e[tag=QT_Target,tag=QT_1,distance=..0.625,limit=1] run tp @s ^0.1875 ^ ^-0.1875 ~ ~
+execute as @e[tag=QT_Target,tag=QT_2,distance=..0.625,limit=1] run tp @s ^ ^ ^-0.1875 ~ ~
+execute as @e[tag=QT_Target,tag=QT_3,distance=..0.625,limit=1] run tp @s ^-0.1875 ^ ^-0.1875 ~ ~
+execute as @e[tag=QT_Target,tag=QT_4,distance=..0.625,limit=1] run tp @s ^0.1875 ^ ^ ~ ~
+execute as @e[tag=QT_Target,tag=QT_5,distance=..0.625,limit=1] run tp @s ^ ^ ^ ~ ~
+execute as @e[tag=QT_Target,tag=QT_6,distance=..0.625,limit=1] run tp @s ^-0.1875 ^ ^ ~ ~
+execute as @e[tag=QT_Target,tag=QT_7,distance=..0.625,limit=1] run tp @s ^0.1875 ^ ^0.1875 ~ ~
+execute as @e[tag=QT_Target,tag=QT_8,distance=..0.625,limit=1] run tp @s ^ ^ ^0.1875 ~ ~
+execute as @e[tag=QT_Target,tag=QT_9,distance=..0.625,limit=1] run tp @s ^-0.1875 ^ ^0.1875 ~ ~

@@ -1,0 +1,20 @@
+{
+    "type": "minecraft:empty",
+    "pools": [
+        {
+            "rolls": 1,
+            "entries": [
+                {
+                    "type": "minecraft:item",
+                    "name": "minecraft:crafting_table",
+                    "functions": [
+                        {
+                            "function": "minecraft:set_nbt",
+                            "tag": "{id:\"sf:advanced_crafting_table\",HideFlags:63,Enchantments:[{id:\"minecraft:unbreaking\",lvl:1s}],display:{Name:\"{\\\"text\\\":\\\"改良型作業台\\\",\\\"color\\\":\\\"white\\\",\\\"italic\\\":false}\"}}"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

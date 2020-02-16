@@ -1,1 +1,0 @@
-execute if entity @s[tag=Ornament] run tp @s ~ ~ ~ ~3 ~

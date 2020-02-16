@@ -1,6 +1,6 @@
 {
-    "replace": false,
     "values": [
-        "sf:main"
+        "sf:main",
+        "sf:qtable/main"
     ]
 }

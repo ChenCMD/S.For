@@ -1,0 +1,3 @@
+summon minecraft:item ~ ~ ~ {Item:{id:tipped_arrow,Count:8b,tag:{Potion:"minecraft:water"}},Tags:[QT_Crafted],NoGravity:true,PickupDelay:32767s}
+execute at @s positioned ^0.188 ^-0.398 ^-0.156 as @e[tag=QT_Slot,name=QT_item,distance=..0.001,sort=nearest,limit=1] positioned ^-0.188 ^0.398 ^0.156 positioned ~ ~0.3 ~ run data modify entity @e[tag=QT_Crafted,distance=..0.001,limit=1] Item.tag merge from entity @s HandItems[0].tag
+data remove entity @e[tag=QT_Crafted,distance=..0.001,limit=1] Item.tag.display
