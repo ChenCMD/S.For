@@ -1,0 +1,2 @@
+execute as @a[tag=DEBUGGER] at @s as @e[type=#sf:enemy,distance=..5] run tellraw @a [{"text":"---------\nHP: "},{"score":{"objective":"MobHealth_CB","name":"@s"}},{"text":"\nATK: "},{"score":{"objective":"MobATK_CB","name":"@s"}},{"text":"\nEXP: "},{"score":{"objective":"MobXP_CB","name":"@s"}}]
+schedule function sf:debug/check_enemy_scores 1s

@@ -1,5 +1,5 @@
 scoreboard players operation @s PerHealth_CB = @s Health_CB
-scoreboard players operation @s PerHealth_CB *= $20 GlobalVer_CB
+scoreboard players operation @s PerHealth_CB *= $20 Const_CB
 scoreboard players operation @s PerHealth_CB /= @s HealthMAX_CB
 scoreboard players set @s[scores={PerHealth_CB=0},tag=!Death] PerHealth_CB 1
 execute if score @s PerHealth_CB matches 11.. run team join HP-High

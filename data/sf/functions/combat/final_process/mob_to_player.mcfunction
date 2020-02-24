@@ -2,9 +2,9 @@
     #tellraw @s [{"text":"RawDamage","color":"yellow"},{"text":": ","color":"white"},{"score":{"objective":"onDamage_CB","name":"@s"}}]
 
 #難易度補正
-    execute if score $Difficulty GlobalVer_CB matches 1 run scoreboard players operation @s onDamage_CB /= $2 AddTmp
-    execute if score $Difficulty GlobalVer_CB matches 3..4 run scoreboard players operation @s onDamage_CB /= $2 AddTmp
-    execute if score $Difficulty GlobalVer_CB matches 3..4 run scoreboard players operation @s onDamage_CB *= $3 AddTmp
+    execute if score $Difficulty GlobalVer_CB matches 1 run scoreboard players operation @s onDamage_CB /= $2 Const_CB
+    execute if score $Difficulty GlobalVer_CB matches 3..4 run scoreboard players operation @s onDamage_CB /= $2 Const_CB
+    execute if score $Difficulty GlobalVer_CB matches 3..4 run scoreboard players operation @s onDamage_CB *= $3 Const_CB
 
 #受けたダメージ-防御力=最終的なダメージ
     scoreboard players operation @s onDamage_CB -= @s DEF_CB
