@@ -1,7 +1,8 @@
 #VSCodeExtension: Datapack Helper Plus Define
     #define entity $ Variables
     #define entity $Global Temporary data is this
-
+#色々使うseed
+    execute store result score $seed GlobalVer_CB run seed
 #gamerule
     gamerule showDeathMessages false
 #チーム
@@ -13,6 +14,8 @@
     team modify HP-Medium color yellow
     team modify HP-Low color red
     team modify Died color dark_gray
+#schedule
+    schedule function sf:1min_clock 60s replace
 #通常使用スコアボード
     scoreboard objectives add Mana_CB dummy {"text":"マナ"}
     scoreboard objectives add C.Mana_CB dummy {"text":"結晶マナ"}
@@ -78,7 +81,7 @@
 #乱数生成用
     scoreboard objectives add Random_CB dummy {"text":"疑似乱数生成用"}
     function sf:system/rng/modifier_gene
-    scoreboard players set $Rand_X Random_CB 1
+    scoreboard players operation $Rand_X Random_CB = $seed GlobalVer_CB
     scoreboard players set $Rand_A Random_CB 48271
     scoreboard players set $Rand_M Random_CB 2147483647
 
@@ -86,7 +89,7 @@
     # Difficulty = 1 :        Easy : (Normal|Elite)Mob体力倍率 x1  |x8  : M->Pダメージ x0.8  : クリティカル倍率 2
     # Difficulty = 2 :      Normal : (Normal|Elite)Mob体力倍率 x1  |x10 : M->Pダメージ x1.0  : クリティカル倍率 2
     # Difficulty = 3 :        Hard : (Normal|Elite)Mob体力倍率 x1.5|x14 : M->Pダメージ x1.25 : クリティカル倍率 2
-    # Difficulty = 4 : IMPPOSSIBLE : (Normal|Elite)Mob体力倍率 x2.0|x25 : M->Pダメージ x1.25 : クリティカル倍率 4
+    # Difficulty = 4 :  IMPOSSIBLE : (Normal|Elite)Mob体力倍率 x2.0|x25 : M->Pダメージ x1.25 : クリティカル倍率 4
     #リセット
         scoreboard players set $Difficulty GlobalVer_CB 0
     #難易度設定フラグ
