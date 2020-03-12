@@ -1,6 +1,3 @@
-#RawDamage
-    #tellraw @s [{"text":"RawDamage","color":"yellow"},{"text":": ","color":"white"},{"score":{"objective":"onDamage_CB","name":"@s"}}]
-
 #難易度補正
     execute if score $Difficulty GlobalVer_CB matches 1 run scoreboard players operation @s onDamage_CB /= $2 Const_CB
     execute if score $Difficulty GlobalVer_CB matches 3..4 run scoreboard players operation @s onDamage_CB /= $2 Const_CB

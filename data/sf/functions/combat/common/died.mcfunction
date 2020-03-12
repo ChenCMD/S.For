@@ -1,2 +1,4 @@
-function sf:trigger/death
-kill @s
+#Trigger発火
+    function sf:trigger/death
+#reset
+    kill @s

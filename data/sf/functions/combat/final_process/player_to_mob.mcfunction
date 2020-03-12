@@ -1,4 +1,3 @@
-# say ダメージ計算
 #Tag add
     tag @e[tag=HurtEntity,sort=nearest] add Target
     tag @s add Attacker

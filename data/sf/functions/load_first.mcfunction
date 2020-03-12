@@ -1,8 +1,10 @@
 #VSCodeExtension: Datapack Helper Plus Define
     #define entity $ Variables
     #define entity $Global Temporary data is this
+    #define storage chenbr:sf
 #色々使うseed
     execute store result score $seed GlobalVer_CB run seed
+    #define entity $seed
 #gamerule
     gamerule showDeathMessages false
 #チーム

@@ -22,5 +22,8 @@
                 ]
             }
         }
+    },
+    "rewards": {
+        "function": "sf:items/armor_check"
     }
 }

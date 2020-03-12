@@ -1,5 +1,6 @@
 #経験値減少 + 引継ぎ
     scoreboard players operation $XP GlobalVer_CB -= $ReqXP GlobalVer_CB
+    execute if score $XP GlobalVer_CB matches ..-1 run scoreboard players set $XP GlobalVer_CB 0
 #レベル+1
     scoreboard players add $Level GlobalVer_CB 1
 #必要経験値増加
