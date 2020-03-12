@@ -12,6 +12,10 @@
     scoreboard players operation $Global GlobalVer_CB += $AddHealth GlobalVer_CB
     scoreboard players operation @a[tag=!Death] HealthMAX_CB += $AddHealth GlobalVer_CB
     scoreboard players operation @a[tag=!Death] Health_CB += $AddHealth GlobalVer_CB
+#スキルポイント+
+    execute if score $Level GlobalVer_CB matches 01..010 run scoreboard players add $ST:Point GlobalVer_CB 1
+    execute if score $Level GlobalVer_CB matches 11..070 run scoreboard players add $ST:Point GlobalVer_CB 2
+    execute if score $Level GlobalVer_CB matches 71..100 run scoreboard players add $ST:Point GlobalVer_CB 3
 
 #MOB体力補正
     scoreboard players operation $MobBaseHealth GlobalVer_CB *= $100 Const_CB

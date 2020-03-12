@@ -2,9 +2,11 @@
     #define entity $ Variables
     #define entity $Global Temporary data is this
     #define storage chenbr:sf
+    #define entity 10-10-10-10-10
 #色々使うseed
     execute store result score $seed GlobalVer_CB run seed
     #define entity $seed
+    function sf:skilltree/generate/main
 #gamerule
     gamerule showDeathMessages false
 #チーム
