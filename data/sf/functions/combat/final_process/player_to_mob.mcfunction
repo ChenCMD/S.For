@@ -4,6 +4,7 @@
     execute if score $DamageType_CB GlobalVer_CB matches 1 if entity @s[nbt=!{SelectedItem:{}}] run tag @s add NoHandItem
 
 #DEBUG
+    tellraw @a {"text":"------------------"}
     tellraw @a [{"text":"ATK: "},{"score":{"objective":"ATK_CB","name":"@s"}}]
     tellraw @a[tag=NoHandItem] [{"text":"NoHandItem: true"}]
     tellraw @a[tag=!NoHandItem] [{"text":"NoHandItem: false"}]
@@ -20,6 +21,9 @@
 #クリティカル処理
     execute if entity @s[tag=!NoCT,tag=!NoBowCT] if entity @s[tag=!NoHandItem] run function sf:system/rng/generation
     execute if entity @s[tag=!NoCT,tag=!NoBowCT] if entity @s[tag=!NoHandItem] run scoreboard players operation @s Random_CB %= $100 Const_CB
+    #DEBUG
+        execute if entity @s[tag=!NoCT,tag=!NoBowCT] if entity @s[tag=!NoHandItem] run tellraw @a [{"text":"Random_CB: "},{"score":{"objective":"Random_CB","name":"@s"}}]
+        execute if entity @s[tag=!NoCT,tag=!NoBowCT] if entity @s[tag=!NoHandItem] run tellraw @a [{"text":"CRITRate_CB: "},{"score":{"objective":"CRITRate_CB","name":"@s"}}]
     execute if entity @s[tag=!NoCT,tag=!NoBowCT] if entity @s[tag=!NoHandItem] if score @s Random_CB < @s CRITRate_CB run scoreboard players operation @e[tag=Target] ATK_CB *= $CriticalCorrection GlobalVer_CB
     execute if entity @s[tag=!NoCT,tag=!NoBowCT] if entity @s[tag=!NoHandItem] if score @s Random_CB < @s CRITRate_CB run scoreboard players operation @e[tag=Target] ATK_CB -= Level GlobalVer_CB
     execute if entity @s[tag=!NoCT,tag=!NoBowCT] if entity @s[tag=!NoHandItem] if score @s Random_CB < @s CRITRate_CB at @a[tag=Attacker] run playsound minecraft:entity.player.levelup block @a ~ ~ ~ 1 1.8

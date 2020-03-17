@@ -26,7 +26,7 @@
 
 #クラフター周りの処理
     #クラフター作成
-        execute as @a at @s if entity @e[type=item,distance=..6] as @e[type=item,nbt={Item:{id:'"minecraft:crafting_table"',Count:1b}},distance=..6] at @s if block ~ ~-0.15 ~ enchanting_table unless entity @e[tag=Crafter,distance=..6] unless entity @e[type=item,tag=CrafterCreate] run tag @s add CrafterCreate
+        execute as @a at @s if entity @e[type=item,distance=..6] as @e[type=item,nbt={Item:{id:"minecraft:crafting_table",Count:1b}},distance=..6] at @s if block ~ ~-0.15 ~ enchanting_table unless entity @e[tag=Crafter,distance=..6] unless entity @e[type=item,tag=CrafterCreate] run tag @s add CrafterCreate
         execute as @e[type=item,tag=CrafterCreate] at @s run function sf:qtable/table_craft
 
 #スキルツリー

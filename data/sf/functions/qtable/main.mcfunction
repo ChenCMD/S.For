@@ -14,4 +14,4 @@ execute as @e[tag=QT_Slot] run data merge entity @s {Fire:2s}
 kill @e[tag=QT_Det,tag=!QT_Keep]
 tag @e[tag=QT_Keep] remove QT_Keep
 execute as @e[tag=QT_Core] at @s unless block ~ ~ ~ crafting_table unless block ~ ~ ~ moving_piston run function sf:qtable/delete
-clear @a stone_button{display:{Name:'""'}}
+clear @a stone_button{display:{Name:""}}
