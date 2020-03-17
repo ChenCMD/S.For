@@ -1,0 +1,1 @@
+scoreboard objectives add QT_PlaceTable minecraft.used:minecraft.crafting_table

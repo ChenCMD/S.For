@@ -23,6 +23,6 @@
         }
     },
     "rewards": {
-        "function": "sf:qtable/set_tag"
+        "function": "qrafting_table:set_tag"
     }
 }
